@@ -1,0 +1,26 @@
+{
+  "dependencies": {
+    "inquirer": "^8.2.0"
+  },
+  "name": "portfolio-generator",
+  "description": "Portfolio generator",
+  "version": "1.0.0",
+  "main": "app.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vohoang2005/portfolio-generator.git"
+  },
+  "keywords": [
+    "portfolio"
+  ],
+  "author": "Chuong Vo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vohoang2005/portfolio-generator/issues"
+  },
+  "homepage": "https://github.com/vohoang2005/portfolio-generator#readme"
+}
