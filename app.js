@@ -10,7 +10,7 @@ const inquirer = require('inquirer')
 //   console.log('Portfolio complete! Check out index.html to see the output!');
 // }); 
 
-const promptProject = () => {
+const promptProject = portfolioData = [];
   console.log(`
 =================
 Add a New Project
@@ -20,12 +20,42 @@ Add a New Project
     {
       type: 'input',
       name: 'name',
-      message: 'What is the name of your project?'
+      message: 'What is your name? (Required)',
+      validate: nameInput => {
+        if (nameInput) {
+          return true;
+        } else {
+          console.log('Please enter your name!');
+          return false;
+        }
+      }
     },
     {
       type: 'input',
+      name: 'name',
+      message: 'What is the name of your project? (Required)',
+      validate: nameInput => {
+        if(nameInput) {
+          return true;
+        } else {
+          console.log('Please enter you name!')
+          return false;
+        }
+      }
+    },
+
+    {
+      type: 'input',
       name: 'description',
-      message: 'Provide a description of the project (Required)'
+      message: 'Provide a description of the project (Required)',
+      validate: nameInput => {
+        if(nameInput) {
+          return true;
+        } else {
+          console.log('Please enter your name!')
+          return false;
+        }
+      }
     },
     {
       type: 'checkbox',
@@ -33,11 +63,22 @@ Add a New Project
       message: 'What did you build this project with? (Check all that apply)',
       choices: ['JavaScript', 'HTML', 'CSS', 'ES6', 'jQuery', 'Bootstrap', 'Node']
     },
+
     {
       type: 'input',
       name: 'link',
-      message: 'Enter the GitHub link to your project. (Required)'
+      message: 'Enter the GitHub link to your project. (Required)',
+      validate: nameInput => {
+        if(nameInput) {
+          return true;
+        } else {
+          console.log('Please enter a name')
+          return false;
+        }
+      
+      }
     },
+
     {
       type: 'confirm',
       name: 'feature',
@@ -51,6 +92,9 @@ Add a New Project
       default: false
     }
   ]);
-};
 
-promptProject().then(answers => console.log(answers));
+
+promptProject()
+  .then(answers => console.log(answers))
+  .then(promptProject)
+  .then(projectAnswers => console.log(projectAnswers));
